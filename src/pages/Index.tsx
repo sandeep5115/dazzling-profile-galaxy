@@ -1,10 +1,17 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, ExternalLink, Award } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Award, Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 const Index = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const updateCursorPosition = (e: MouseEvent) => {
@@ -14,6 +21,10 @@ const Index = () => {
     window.addEventListener('mousemove', updateCursorPosition);
     return () => window.removeEventListener('mousemove', updateCursorPosition);
   }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -36,22 +47,34 @@ const Index = () => {
           >
             CS.
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex gap-8"
-          >
-            {['Home', 'Projects', 'Skills', 'Contact'].map((item, index) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-foreground/80 hover:text-primary transition-colors"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {item}
-              </a>
-            ))}
-          </motion.div>
+          <div className="flex items-center gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex gap-8"
+            >
+              {['Home', 'Projects', 'Skills', 'Contact'].map((item, index) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-foreground/80 hover:text-primary transition-colors"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {item}
+                </a>
+              ))}
+            </motion.div>
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2 rounded-full hover:bg-secondary transition-colors"
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-5 h-5" />
+              ) : (
+                <Moon className="w-5 h-5" />
+              )}
+            </button>
+          </div>
         </div>
       </nav>
 
