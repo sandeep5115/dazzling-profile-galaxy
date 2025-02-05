@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ExternalLink, Award, Moon, Sun } from 'lucide-react';
@@ -221,6 +220,81 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Publications Section */}
+      <section className="py-20 bg-gradient-to-b from-background to-secondary/5">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl font-bold text-center mb-16 gradient-text"
+          >
+            Publications
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="max-w-3xl mx-auto"
+          >
+            <div className="premium-card p-6">
+              <h3 className="text-xl font-bold mb-4">
+                "Enhancing Game Security Through NFT Integration"
+              </h3>
+              <p className="text-foreground/60 mb-4">
+                A comprehensive study on implementing blockchain technology in gaming security.
+              </p>
+              <a
+                href="https://ijisae.org/index.php/IJISAE/article/view/5399"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+              >
+                <ExternalLink className="w-5 h-5" />
+                View Publication
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl font-bold text-center mb-16 gradient-text"
+          >
+            Certifications
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={cert.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="premium-card p-6"
+              >
+                <div className="mb-4">
+                  <Award className="w-8 h-8 text-primary mb-3" />
+                  <h3 className="text-xl font-bold mb-2">{cert.title}</h3>
+                  <p className="text-foreground/60 mb-4">{cert.issuer}</p>
+                </div>
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  View Certificate
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20">
         <div className="container mx-auto px-4">
@@ -299,5 +373,23 @@ const skills = {
     "Unity Engine",
   ],
 };
+
+const certifications = [
+  {
+    title: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    link: "https://drive.google.com/file/d/1NqjuswJ3ruw3Fz-KkqMT3Gw9mNiqBcEL/view?usp=sharing",
+  },
+  {
+    title: "Unity Certified User: Programmer",
+    issuer: "Unity Technologies",
+    link: "https://drive.google.com/file/d/1Od6VShEMmM7wcwDFhdHzsWJkak7akmaz/view?usp=sharing",
+  },
+  {
+    title: "Red Hat Certified Enterprise Application Developer",
+    issuer: "Red Hat",
+    link: "https://drive.google.com/file/d/1ts0uxjr9G0ziumTuuZnJO7quN_TnS3He/view?usp=sharing",
+  },
+];
 
 export default Index;
