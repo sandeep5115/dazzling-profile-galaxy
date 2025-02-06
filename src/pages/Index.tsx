@@ -1,6 +1,8 @@
+
 import { useEffect, useState } from 'react';
 import Navigation from '@/components/layout/Navigation';
 import Hero from '@/components/sections/Hero';
+import Profile from '@/components/sections/Profile';
 import Projects from '@/components/sections/Projects';
 import Skills from '@/components/sections/Skills';
 import Publications from '@/components/sections/Publications';
@@ -31,6 +33,7 @@ const Index = () => {
 
       <Navigation />
       <Hero />
+      <Profile />
       <Projects projects={projects} />
       <Skills skills={skills} />
       <Publications />
