@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
@@ -17,7 +16,7 @@ const Publications = () => (
         whileInView={{ opacity: 1, y: 0 }}
         className="max-w-3xl mx-auto"
       >
-        <div className="premium-card p-6">
+        <div className="premium-card p-6 mb-6">
           <h3 className="text-xl font-bold mb-4">
             "Enhancing Game Security Through NFT Integration"
           </h3>
@@ -34,6 +33,25 @@ const Publications = () => (
             View Publication
           </a>
         </div>
+
+        <div className="premium-card p-6">
+          <h3 className="text-xl font-bold mb-4">
+            "A Review of Blockchain Technology in Different Sectors: Challenges and Solutions"
+          </h3>
+          <p className="text-foreground/60 mb-4">
+            An extensive analysis of blockchain technology applications and their implementation challenges across various industries.
+          </p>
+          <a
+            href="https://ieeexplore.ieee.org/document/10125283?denied="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+          >
+            <ExternalLink className="w-5 h-5" />
+            View Publication
+          </a>
+        </div>
+        
       </motion.div>
     </div>
   </section>
