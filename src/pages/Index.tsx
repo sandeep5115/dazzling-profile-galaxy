@@ -42,7 +42,7 @@ const Index = () => {
 
       <footer className="py-8 text-center text-foreground/60">
         <div className="container mx-auto px-4">
-          <p>&copy; 2024 Chinnam Sandeep. All rights reserved.</p>
+          
         </div>
       </footer>
     </div>
@@ -68,13 +68,38 @@ const projects = [
     tech: ["Enterprise Programming", "Java"],
     link: "https://github.com/sandeepchinnam/Grievance",
   },
+  {
+    title: "Gym Rental System",
+    description: "A platform providing rental services for gym equipment to individuals.",
+    tech: ["MEAN Stack"],
+    link: "https://github.com/sandeepchinnam/",
+  },
+  {
+    title: "Blog Management",
+    description: "A platform providing bolg services for the users.",
+    tech: ["DJANGO"],
+    link: "https://github.com/sandeepchinnam/django_blog_management",
+  },
+  {
+    title: "SIMPLE TOOLS",
+    description: "A platform providing QR CODE GENERATION AND URL SHORTENER ETC.",
+    tech: ["PYTHON"],
+    link: "https://github.com/sandeepchinnam/TOOLS",
+  },
+  {
+    title: "Cookies Chef",
+    description: "A front-end platform for users to discover and explore cooking recipes.",
+    tech: ["REACT.JS"],
+    link: "https://github.com/sandeepchinnam/COOKIES_CHEF",
+  },
 ];
 
 const skills = {
   languages: [
-    { name: "Python", level: 90 },
-    { name: "Django", level: 85 },
     { name: "HTML/CSS", level: 80 },
+    { name: "Python", level: 70 },
+    { name: "Django", level: 70 },
+    
   ],
   expertise: [
     "Web Development",
