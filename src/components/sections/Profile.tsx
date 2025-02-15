@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -97,6 +98,5 @@ const Profile = () => {
     </section>
   );
 };
-
 
 export default Profile;
