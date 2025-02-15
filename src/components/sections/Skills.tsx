@@ -37,7 +37,7 @@ const Skills = ({ skills }: SkillsProps) => (
               <div key={skill.name}>
                 <div className="flex justify-between mb-2">
                   <span>{skill.name}</span>
-                  <span>{skill.level}%</span>
+{/*                   <span>{skill.level}%</span> */}
                 </div>
                 <div className="h-2 bg-secondary rounded-full overflow-hidden">
                   <motion.div
