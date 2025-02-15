@@ -1,6 +1,5 @@
-
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Download, User } from 'lucide-react';
+import { Github, Linkedin, Mail, Download } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const Profile = () => {
@@ -15,9 +14,18 @@ const Profile = () => {
 
   const socials = [
     { icon: Github, link: "https://github.com/sandeepchinnam", label: "GitHub" },
-    { icon: Linkedin, link: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-    { icon: Mail, link: "mailto:2@gmail.com", label: "Email" },
+    { icon: Linkedin, link: "https://linkedin.com/in/sandeep939898", label: "LinkedIn" },
+    { icon: Mail, link: "mailto:2000030196cse@gmail.com", label: "Email" },
   ];
+
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/SANDEEP_RESUME.pdf"; // Path to the resume in the public folder
+    link.download = "SANDEEP_RESUME.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="profile" className="py-20 bg-gradient-to-b from-background to-secondary/5">
@@ -40,13 +48,13 @@ const Profile = () => {
               <div className="flex flex-col items-center gap-4">
                 <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
                   <img
-                    src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952"
+                    src="MYPIC.jpg"
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <Button
-                  onClick={() => window.open("/path-to-your-resume.pdf", "_blank")}
+                  onClick={handleDownloadResume}
                   className="w-full flex items-center justify-center gap-2"
                 >
                   <Download className="w-4 h-4" />
